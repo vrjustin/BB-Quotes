@@ -18,6 +18,7 @@
 		1A3BADF62BAB4C1B003498C5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3BADF52BAB4C1B003498C5 /* Constants.swift */; };
 		1A3BADF92BAB4EF7003498C5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3BADF82BAB4EF7003498C5 /* ViewModel.swift */; };
 		1A3BADFB2BAB5795003498C5 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3BADFA2BAB5795003498C5 /* QuoteView.swift */; };
+		1A3BADFD2BAC52C9003498C5 /* CharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3BADFC2BAC52C9003498C5 /* CharacterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		1A3BADF52BAB4C1B003498C5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1A3BADF82BAB4EF7003498C5 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		1A3BADFA2BAB5795003498C5 /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
+		1A3BADFC2BAC52C9003498C5 /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			children = (
 				1A3BADDE2BAB2CF8003498C5 /* ContentView.swift */,
 				1A3BADFA2BAB5795003498C5 /* QuoteView.swift */,
+				1A3BADFC2BAC52C9003498C5 /* CharacterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				1A3BADFB2BAB5795003498C5 /* QuoteView.swift in Sources */,
 				1A3BADF32BAB4145003498C5 /* FetchController.swift in Sources */,
 				1A3BADDD2BAB2CF8003498C5 /* BB_QuotesApp.swift in Sources */,
+				1A3BADFD2BAC52C9003498C5 /* CharacterView.swift in Sources */,
 				1A3BADF62BAB4C1B003498C5 /* Constants.swift in Sources */,
 				1A3BADF92BAB4EF7003498C5 /* ViewModel.swift in Sources */,
 			);
