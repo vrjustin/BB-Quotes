@@ -15,51 +15,53 @@ struct QuoteView: View {
     var body: some View {
         GeometryReader { geoReader in
             ZStack {
-                Image(show.lowercased().filter { $0 != " "})
+                Image(show.lowerNoSpaces)
                     .resizable()
                     .frame(width: geoReader.size.width * 2.7, height: geoReader.size.height * 1.2)
                 
                 VStack {
-                    Spacer(minLength: 140)
-                    
-                    switch viewModel.status {
-                    case .notStarted:
-                        EmptyView()
-                    case .fetching:
-                        ProgressView()
-                    case .success(let data):
-                        Text("\"\(data.quote.quote)\"")
-                            .minimumScaleFactor(0.5)
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(.black.opacity(0.5))
-                            .cornerRadius(25)
-                            .padding(.horizontal)
+                    VStack {
+                        Spacer(minLength: 140)
                         
-                        ZStack(alignment: .bottom, content: {
-                            AsyncImage(url: data.character.images[0]) { image in
-                                    image
-                                    .resizable()
-                                    .scaledToFill()
-                            } placeholder: {
-                                ProgressView()
-                            }
-                            .frame(width: geoReader.size.width / 1.1, height: geoReader.size.height / 1.8)
-                            
-                            Text(data.quote.character)
+                        switch viewModel.status {
+                        case .notStarted:
+                            EmptyView()
+                        case .fetching:
+                            ProgressView()
+                        case .success(let data):
+                            Text("\"\(data.quote.quote)\"")
+                                .minimumScaleFactor(0.5)
+                                .multilineTextAlignment(.center)
                                 .foregroundColor(.white)
-                                .padding(10)
-                                .frame(maxWidth: .infinity)
-                                .background(.ultraThinMaterial)
-                        })
-                        .frame(width: geoReader.size.width / 1.1, height: geoReader.size.height / 1.8)
-                        .cornerRadius(80)
-                    case .failed(let error):
-                        EmptyView()
+                                .padding()
+                                .background(.black.opacity(0.5))
+                                .cornerRadius(25)
+                                .padding(.horizontal)
+                            
+                            ZStack(alignment: .bottom, content: {
+                                AsyncImage(url: data.character.images[0]) { image in
+                                    image
+                                        .resizable()
+                                        .scaledToFill()
+                                } placeholder: {
+                                    ProgressView()
+                                }
+                                .frame(width: geoReader.size.width / 1.1, height: geoReader.size.height / 1.8)
+                                
+                                Text(data.quote.character)
+                                    .foregroundColor(.white)
+                                    .padding(10)
+                                    .frame(maxWidth: .infinity)
+                                    .background(.ultraThinMaterial)
+                            })
+                            .frame(width: geoReader.size.width / 1.1, height: geoReader.size.height / 1.8)
+                            .cornerRadius(80)
+                        case .failed(let error):
+                            EmptyView()
+                        }
+                        
+                        Spacer()
                     }
-                    
-                    Spacer()
                     
                     Button {
                         //Action of button press here
@@ -71,9 +73,9 @@ struct QuoteView: View {
                             .font(.title)
                             .foregroundColor(.white)
                             .padding()
-                            .background(.breakingBadGreen)
+                            .background(Color("\(show.noSpaces)Button"))
                             .cornerRadius(7)
-                            .shadow(color: .breakingBadYellow, radius: 2)
+                            .shadow(color: Color("\(show.noSpaces)Shadow"), radius: 2)
                     }
                     
                     Spacer(minLength: 180)
@@ -87,6 +89,6 @@ struct QuoteView: View {
 }
 
 #Preview {
-    QuoteView(show: "Breaking Bad")
+    QuoteView(show: Constants.bbName)
         .preferredColorScheme(.dark)
 }
